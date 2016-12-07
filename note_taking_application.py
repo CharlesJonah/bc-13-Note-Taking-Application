@@ -1,9 +1,12 @@
+
+"""This is the program main file"""
 import os
 import sqlite3 as lite
 import sys
 
+
 """ This is the main class of the program. It has functions to get user input and output. The modules that compose this class include
-    CREATE_NOTE , VIEW_NOTE, DELETE_NOTE , VIEW ALL NOTES , SEARCH NOTE, EXIT FOR PROGRAM """
+    CREATE_NOTE , VIEW_NOTE, DELETE_NOTE , VIEW ALL NOTES , SEARCH NOTE, EXIT FOR PROGRAM. """
 
 
 class notes:
