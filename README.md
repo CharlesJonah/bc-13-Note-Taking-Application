@@ -12,5 +12,18 @@ This application allows users to:
 
 5.Search for a note
 
+6.Export to json file
 
-#The application should be run using the 'note_taking_application.py' file
+
+#Dependencies
+
+pip install docopt
+
+pip install tabulate
+
+import notes.db database
+
+#Installation
+
+Run note_taking_application.py
+
