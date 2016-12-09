@@ -19,7 +19,7 @@ Options:
 import sys
 import cmd
 import os
-from note_back import Notes
+from note_taking_app_logic import Notes
 from docopt import docopt, DocoptExit
 nt = Notes()
 
