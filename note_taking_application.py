@@ -1,14 +1,14 @@
 """
 This uses docopt library to allow for a smooth user Interactive session.
 Usage:
-    note_app note_create <note_content>...
+    
     note_app note_create <note_content>
     note_app note_view <note_id>
     note_app note_delete <note_id>
-    note_app note_list <limit>
+    note_app note_list
     note_app note_search <query_string>
-    note_app note_import_json <note_id>
-    note_app note_export_json <jsonfile_id>
+    note_app note_import_json <file_name>
+    note_app export_json <file_name>
     
 
 Options:
@@ -81,19 +81,17 @@ class ScreenOut (cmd.Cmd):
     print("*                                               *")
     print("* 3. note_delete                                *")
     print("*                                               *")
-    print("* 4. note_view_all                              *")
+    print("* 4. note_list                                  *")
     print("*                                               *")
     print("* 5. note_search                                *")
     print("*                                               *")
-    print("* 6. note_delete                                *")
+    print("* 6. note_export_json                           *")
     print("*                                               *")
-    print("* 7. import_json                                *")
+    print("* 7. note_import_json                           *")
     print("*                                               *")
-    print("* 8. export_json                                *")
+    print("* 8. help                                       *")
     print("*                                               *")
-    print("* 9. help                                       *")
-    print("*                                               *")
-    print("* 10. quit                                      *")
+    print("* 9. quit                                       *")
     print("*                                               *") 
     print("* * * * * * * * * * * * * * * * * * * * * * * * *")
     print("                                                 ") 
@@ -106,7 +104,6 @@ class ScreenOut (cmd.Cmd):
     @docopt_cmd
     def do_note_create(self, arg):
         """Usage: note_create <note_content>..."""
-
         nt.create(' '.join(arg['<note_content>']))
     # This cmd links to the view() method
     @docopt_cmd
@@ -126,9 +123,9 @@ class ScreenOut (cmd.Cmd):
     # This cmd links to the list() method
     @docopt_cmd
     def do_note_list(self, arg):
-        """Usage: note_list <limit>"""
+        """Usage: note_list """
 
-        nt.list(arg['<limit>'])
+        nt.list()
     
            
     # This cmd links to the search() method
@@ -136,14 +133,13 @@ class ScreenOut (cmd.Cmd):
     def do_note_search(self, arg):
         """Usage: note_search <query_string>..."""
 
-        nt.search(' '.join(arg['<query_string>']))
+        nt.note_search(' '.join(arg['<query_string>']))
 
-    # This cmd links to the next() method
     @docopt_cmd
-    def next_note(self, arg):
-        """Usage: next_note <next_word>"""
+    def do_export_json(self, arg):
+        """Usage: export_json <file_name>"""
 
-        noted.nextNote(arg['<next_word>'])
+        nt.export(arg['<file_name>'])
 
 
     
