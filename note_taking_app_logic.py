@@ -177,5 +177,7 @@ class Notes(object):
 
         with open(file_name +'.json', 'w') as f:
             data = json.dump(result_rows,f,indent=4)
+
+        print("THE EXPORT WAS SUCCESSFULL")
         
         
